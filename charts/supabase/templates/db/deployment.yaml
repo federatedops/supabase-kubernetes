@@ -65,6 +65,7 @@ spec:
             {{- if .Values.db.persistence.enabled }}
             - mountPath: {{ .Values.db.storage.mountPath }}
               name: postgres-volume
+              subPath: {{ .Values.db.storage.subPath }}
             {{- end }}
           {{- with .Values.db.resources }}
           resources:
